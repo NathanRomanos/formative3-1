@@ -1,6 +1,28 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #333;
-  color: gainsboro;
+  background-color: gainsboro;
+  color: tomato;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+  font-family: serif;
+}
+
+.myContainer {
+  padding: 2vh 5vw;
+}
+
+.countryPicker {
+  margin: 2vh 0;
+}
+
+.countryPicker-button {
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

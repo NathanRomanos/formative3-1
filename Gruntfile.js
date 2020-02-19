@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     //   }
     // }
     jshint: {
-      all: ['Gruntfile.js', 'js/*.js']
+      all: ['Gruntfile.js', 'js/script.js']
       },
     sass: {                              // Task
       dist: {                            // Target
@@ -24,6 +24,33 @@ module.exports = function(grunt) {
           'css/style.css': 'sass/style.scss'      // 'destination': 'source'
         }
       }
+    },
+    csslint: {
+      strict: {
+        options: {
+          import: 2
+        },
+        src: ['css/style.css']
+      },
+      lax: {
+        options: {
+          import: false
+        },
+        src: ['css/style.css']
+      }
+    },
+    watch: {
+      all: {
+        files: ['sass/style.scss','css/style.css', 'js/script.js'],
+        tasks: ['sass','csslint', 'jshint'],
+      },
+    },
+    uglify: {
+
+      build: {
+        src: 'js/script.js',
+        dest: 'js/script.min.js'
+      }
     }
   });
 
@@ -31,9 +58,14 @@ module.exports = function(grunt) {
   // grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // // Default task(s).
   // grunt.registerTask('default', ['uglify']);
-  grunt.registerTask('default', ['sass', 'jshint']);
+  // grunt.registerTask('default', ['sass', 'jshint', 'csslint', 'watch']);
+  grunt.registerTask('default', ['sass', 'watch']);
+  grunt.registerTask('ugly', ['uglify']);
 
 };
