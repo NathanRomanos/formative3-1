@@ -18,16 +18,24 @@ $(document).ready(function(){
         console.log(data);
         for (var i = 0; i < data.articles.length; i++) {
 
+          var author;
+
+          if (data.articles[i].author === null) {
+            author = "";
+          } else {
+            author = "By " +  data.articles[i].author;
+          }
+
           document.getElementById('results').innerHTML +=
           '<div class="myCard">' +
             '<div class="myCard-photoContainer">' +
-              '<img class="myCard-photo" alt="Image" src="' +  data.articles[i].urlToImage + '">' +
-                '<h2 class="myCard-title">' + "Title Goes here" + '</h2>' +
+              '<div class="myCard-photo" style="background-image: url('+data.articles[i].urlToImage+')">' + '</div>' +
+                '<h2 class="myCard-title">' + data.articles[i].title + '</h2>' +
               '<div class="photoShadow"></div>' +
               '</div>' +
             '<div class="myCard-text">' +
-              '<h2>' + "Author Goes here" + '</h2>' +
-              '<p>' + "description goes here" + '</p>' +
+              '<p>' + data.articles[i].description + '</p>' +
+              '<h4>' + author + '</h4>' +
             '</div>' +
           '</div>';
 
