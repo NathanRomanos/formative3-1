@@ -40,11 +40,11 @@ h1{
     margin: 2%;
 
 
-    .myCard-photoContainer{
-      width: 100%;
-      height: 300px;
+    .col{
       background-color: white;
       position: relative;
+      padding-left: 0;
+      padding-right: 0;
 
 
       .myCard-photo{
@@ -81,7 +81,7 @@ h1{
       width: 100%;
       padding: 2%;
       h4{
-        margin-bottom: 50px;
+        margin-bottom: 30px;
       }
     }
 

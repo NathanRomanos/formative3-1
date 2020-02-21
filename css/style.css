@@ -36,19 +36,19 @@ h1 {
   color: tomato;
   margin: 2%;
 }
-.results .myCard .myCard-photoContainer {
-  width: 100%;
-  height: 300px;
+.results .myCard .col {
   background-color: white;
   position: relative;
+  padding-left: 0;
+  padding-right: 0;
 }
-.results .myCard .myCard-photoContainer .myCard-photo {
+.results .myCard .col .myCard-photo {
   background-position: center;
   background-size: cover;
   width: 100%;
   height: 100%;
 }
-.results .myCard .myCard-photoContainer .myCard-title {
+.results .myCard .col .myCard-title {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -58,7 +58,7 @@ h1 {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
 }
-.results .myCard .myCard-photoContainer .photoShadow {
+.results .myCard .col .photoShadow {
   width: 100%;
   height: 40px;
   position: absolute;
@@ -72,7 +72,7 @@ h1 {
   padding: 2%;
 }
 .results .myCard .myCard-text h4 {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .results .myCard:hover {
   box-shadow: 5px 10px 12px rgba(0, 0, 0, 0.5);
