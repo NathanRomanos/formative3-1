@@ -18,14 +18,15 @@
       <div class="navSearch">
 
         <!-- endpoints -->
-        <select id="countries" class="picker" name="countries">
+        <select id="countries" class="picker" name="countries" onchange="disableSearch(this)">
           <option value="0">Choose country</option>
           <option value="nz">New Zealand</option>
           <option value="au">Australia</option>
           <option value="us">USA</option>
           <option value="gb">UK</option>
         </select>
-        <select id="categories" class="picker" name="categories">
+          <select id="countriesOff" class="picker off" name="countries" disabled><option value="0">Choose country</option></select>
+        <select id="categories" class="picker" name="categories" onchange="disableSearch(this)">
           <option value="0">Choose category</option>
           <option value="business">Business</option>
           <option value="entertainment">Entertainment</option>
@@ -34,8 +35,12 @@
           <option value="sports">Sports</option>
           <option value="technology">Technology</option>
         </select>
+        <select id="categoriesOff" class="picker off" name="countries" disabled><option value="0">Choose category</option></select>
+
+
         <!-- Search form -->
-        <input id="search" class="searcher" type="text" placeholder="Search..." aria-label="Search">
+        <input id="search" class="searcher" type="text" placeholder="Search..." aria-label="Search" onkeyup="disablePicker(this)">
+        <input id="searchOff" class="searcher off2" type="text" placeholder="Search..." aria-label="Search" onkeyup="disablePicker(this)" disabled>
         <button id="go" class="button" type="button" name="button">Go</button>
 
       </div> <!--nav search ends here-->

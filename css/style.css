@@ -6,6 +6,12 @@
   scroll-behavior: smooth;
 }
 
+body {
+  min-height: 100vh;
+  min-width: 100%;
+  border: 10px solid tomato;
+}
+
 .myNav {
   background-color: tomato;
   display: flex;
@@ -68,12 +74,16 @@
   border-radius: 0;
 }
 
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
 .button:hover, .picker:hover {
   background-color: tomato;
   color: white;
 }
 
-::placeholder {
+.searcher::placeholder {
   color: white;
 }
 
@@ -144,6 +154,22 @@
   z-index: 100;
   animation: spinner-border 1s linear infinite;
   -webkit-animation: spinner-border 1s linear infinite;
+}
+
+.off {
+  background-color: lightgrey !important;
+  border-color: grey !important;
+  color: grey !important;
+  display: none;
+}
+
+.off2 {
+  border-color: lightgrey !important;
+  display: none;
+}
+
+.off2::placeholder {
+  color: lightgrey;
 }
 
 /*# sourceMappingURL=style.css.map */

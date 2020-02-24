@@ -1,5 +1,27 @@
 console.log('working');
 
+function disablePicker(search){
+  console.log(search.value);
+  if (search.value == 0) {
+    $('#countries, #categories').show();
+    $('#countriesOff, #categoriesOff').hide();
+  } else {
+    $('#countries, #categories').hide();
+    $('#countriesOff, #categoriesOff').show();
+  }
+}
+
+function disableSearch(picker){
+  console.log(picker.value);
+  if (picker.value == 0) {
+    $('#search').show();
+    $('#searchOff').hide();
+  } else {
+    $('#search').hide();
+    $('#searchOff').show();
+  }
+}
+
 $(document).ready(function(){
 
   var myKey = JSON.parse(apiKey);
@@ -11,6 +33,8 @@ $(document).ready(function(){
 
 
   $('.mySpinner').hide();
+
+
 
 
   document.getElementById('go').addEventListener('click', function(){
