@@ -7,27 +7,93 @@
 }
 
 
-h1{
-  // background-color: gainsboro;
-  color: tomato;
-  text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
-  font-family: serif;
+
+
+
+// NAV
+.myNav{
+  background-color: tomato;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .navTitle{
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    img{
+      height: 80%;
+      margin: 0 1vw;
+    }
+
+    a{
+      font-style: none;
+      text-decoration: none;
+    }
+
+    h1{
+      color: white;
+      text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
+      font-family: serif;
+      font-size: 4rem;
+      cursor: pointer;
+    }
+
+  }
+
+
+  .navSearch{
+    margin-right: 2vw;
+    align-self: flex-end;
+  }
+}
+.button{
+  border-radius: 5px;
+  border: 1px solid rgb(166, 166, 166);
+  width: 50px;
 }
 
+.button,.picker{
+  cursor: pointer;
+}
+
+.searcher, .picker, .button{
+  border-radius: 5px;
+  height: 30px;
+  background-color: white;
+  margin: 20px 10px;
+  border-color: white;
+}
+
+.searcher{
+  background-color: tomato;
+  border: 0;
+  color: white;
+  border-bottom: 2px solid white;
+  border-radius: 0;
+}
+
+.button:hover, .picker:hover{
+  background-color: tomato;
+  color: white;
+}
+
+::placeholder{
+  color: white;
+}
+
+
+// RESULTS CONTAINER
 .myContainer{
   padding: 2vh 5vw;
 }
 
-.countryPicker{
-  margin: 2vh 0;
-
-}
-.countryPicker-button{
-  border-radius: 5px;
-  border: 1px solid rgb(166, 166, 166);
-}
-
-// RESULTS CONTAINER
 .results{
   display: flex;
   flex-wrap: wrap;
@@ -94,4 +160,17 @@ h1{
     color: white;
   }
 
+}
+
+
+.mySpinner{
+  position: absolute;
+  top: 35vh;
+  left: 40vw;
+  z-index: 100;
+  // color: tomato;
+  // border: 0.75em solid currentColor;
+  // border-right-color: transparent;
+  animation: spinner-border 1s linear infinite;
+  -webkit-animation: spinner-border 1s linear infinite
 }

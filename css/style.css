@@ -6,23 +6,79 @@
   scroll-behavior: smooth;
 }
 
-h1 {
-  color: tomato;
+.myNav {
+  background-color: tomato;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.myNav .navTitle {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.myNav .navTitle img {
+  height: 80%;
+  margin: 0 1vw;
+}
+.myNav .navTitle a {
+  font-style: none;
+  text-decoration: none;
+}
+.myNav .navTitle h1 {
+  color: white;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
   font-family: serif;
+  font-size: 4rem;
+  cursor: pointer;
+}
+.myNav .navSearch {
+  margin-right: 2vw;
+  align-self: flex-end;
+}
+
+.button {
+  border-radius: 5px;
+  border: 1px solid #a6a6a6;
+  width: 50px;
+}
+
+.button, .picker {
+  cursor: pointer;
+}
+
+.searcher, .picker, .button {
+  border-radius: 5px;
+  height: 30px;
+  background-color: white;
+  margin: 20px 10px;
+  border-color: white;
+}
+
+.searcher {
+  background-color: tomato;
+  border: 0;
+  color: white;
+  border-bottom: 2px solid white;
+  border-radius: 0;
+}
+
+.button:hover, .picker:hover {
+  background-color: tomato;
+  color: white;
+}
+
+::placeholder {
+  color: white;
 }
 
 .myContainer {
   padding: 2vh 5vw;
-}
-
-.countryPicker {
-  margin: 2vh 0;
-}
-
-.countryPicker-button {
-  border-radius: 5px;
-  border: 1px solid #a6a6a6;
 }
 
 .results {
@@ -79,6 +135,15 @@ h1 {
   cursor: pointer;
   background-color: tomato;
   color: white;
+}
+
+.mySpinner {
+  position: absolute;
+  top: 35vh;
+  left: 40vw;
+  z-index: 100;
+  animation: spinner-border 1s linear infinite;
+  -webkit-animation: spinner-border 1s linear infinite;
 }
 
 /*# sourceMappingURL=style.css.map */

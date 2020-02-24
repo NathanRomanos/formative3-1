@@ -7,13 +7,53 @@ $(document).ready(function(){
   myKey = myKey[0].key;
   console.log(myKey);
 
+  var cnt,cat,and,sea;
+
+
+  $('.mySpinner').hide();
+
+
   document.getElementById('go').addEventListener('click', function(){
-    var cnt = document.getElementById('countries').value;
+    document.getElementById('results').innerHTML = "";
+    cnt = document.getElementById('countries').value;
+    cat = document.getElementById('categories').value;
+    sea = document.getElementById('search').value;
+    if (cnt != 0 && cat != 0) {
+      and = "&";
+    } else {
+      and = "";
+    }
+    if (cnt == 0 ) {
+      cnt = "";
+    } else {
+      cnt = 'country=' + document.getElementById('countries').value;
+    }
+    if (cat == 0 ) {
+      cat = "";
+    } else {
+      cat = 'category=' + document.getElementById('categories').value;
+    }
+    if (sea == 0) {
+      sea = "";
+    } else {
+      sea = 'q=' + document.getElementById('search').value;
+    }
     console.log(cnt);
+    console.log(cat);
+    console.log(and);
+    console.log(sea);
     $.ajax({
-      url:'http://newsapi.org/v2/top-headlines?country='+cnt+'&apiKey=6f9585ad9b044a95bd8060af0cce9781',
+      url:'http://newsapi.org/v2/top-headlines?'+cnt+''+and+''+cat+''+sea+'&apiKey=6f9585ad9b044a95bd8060af0cce9781',
       type:'GET',
       data:'json',
+      // Reveal spinner when getting article information
+      beforeSend : function(){
+				$('.mySpinner').show();
+			},
+			// Once the articles have loaded, hides the spinner indicating loading
+			complete : function(){
+				$('.mySpinner').hide();
+			},
       success: function(data){
         console.log(data);
         for (var i = 0; i < data.articles.length; i++) {

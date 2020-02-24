@@ -8,36 +8,49 @@
   </head>
   <body>
 
+    <div class="myNav">
+
+      <div class="navTitle">
+        <img src="images/loaf.png" alt="">
+        <a href="index.html"><h1>The Dogeloaf Press</h1></a>
+      </div>
+
+      <div class="navSearch">
+
+        <!-- endpoints -->
+        <select id="countries" class="picker" name="countries">
+          <option value="0">Choose country</option>
+          <option value="nz">New Zealand</option>
+          <option value="au">Australia</option>
+          <option value="us">USA</option>
+          <option value="gb">UK</option>
+        </select>
+        <select id="categories" class="picker" name="categories">
+          <option value="0">Choose category</option>
+          <option value="business">Business</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="health">Healh</option>
+          <option value="science">Science</option>
+          <option value="sports">Sports</option>
+          <option value="technology">Technology</option>
+        </select>
+        <!-- Search form -->
+        <input id="search" class="searcher" type="text" placeholder="Search..." aria-label="Search">
+        <button id="go" class="button" type="button" name="button">Go</button>
+
+      </div> <!--nav search ends here-->
+
+    </div> <!--nav ends here-->
+
 
     <div class="myContainer">
 
-      <h1>The Dogeloaf Press</h1>
-
-      <!-- endpoints -->
-      <select id="countries" class="countryPicker" name="countries">
-        <option value="choose">Choose country</option>
-        <option value="nz">New Zealand</option>
-        <option value="au">Australia</option>
-        <option value="us">USA</option>
-        <option value="gb">UK</option>
-      </select>
-      <select id="categories" class="countryPicker" name="categories">
-        <option value="choose">Choose category</option>
-        <option value="nz">Business</option>
-        <option value="au">Entertainment</option>
-        <option value="us">Healh</option>
-        <option value="gb">Science</option>
-        <option value="gb">Sports</option>
-        <option value="gb">Technology</option>
-      </select>
-      <!-- Search form -->
-      <input id="search" class="" type="text" placeholder="Search" aria-label="Search">
-      <button id="go" class="countryPicker-button" type="button" name="button">Go</button>
-
-
+      <div class="mySpinner" role="status">
+        <img src="images/head.png" alt="">
+      </div>
 
       <div id="results" class="results">
-        <div class="myCard">
+        <!-- <div class="myCard">
           <div class="col">
             <img class="card-img-top" alt="Artice image" src=" images/horse.jpg">
             <h2 class="myCard-title">Title Goes here</h2>
@@ -48,7 +61,7 @@
             <p>description goes here</p>
             <h2>Author Goes here</h2>
           </div>
-        </div> <!--my card ends here-->
+        </div>  -->
 
       </div> <!--results container ends here-->
 
