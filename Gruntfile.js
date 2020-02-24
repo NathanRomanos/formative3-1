@@ -51,7 +51,40 @@ module.exports = function(grunt) {
         src: 'js/script.js',
         dest: 'js/script.min.js'
       }
-    }
+    },
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'release/css',
+          src: ['css/*.css', '!*.min.css'],
+          dest: 'release/css',
+          ext: '.min.css'
+        }]
+      }
+    },
+    // imagemin: {
+    //     static: {
+    //         options: {
+    //             optimizationLevel: 3,
+    //             svgoPlugins: [{removeViewBox: false}],
+    //             use: [mozjpeg()] // Example plugin usage
+    //         },
+    //         files: {
+    //             'dist/img.png': 'src/img.png',
+    //             'dist/img.jpg': 'src/img.jpg',
+    //             'dist/img.gif': 'src/img.gif'
+    //         }
+    //     },
+    //     dynamic: {
+    //         files: [{
+    //             expand: true,
+    //             cwd: 'src/',
+    //             src: ['images/*.{png,jpg,gif}'],
+    //             dest: 'dist/'
+    //         }]
+    //     }
+    // }
   });
 
   // Load the plugin that provides the "uglify" task.
@@ -61,11 +94,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  // grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   // // Default task(s).
   // grunt.registerTask('default', ['uglify']);
   // grunt.registerTask('default', ['sass', 'jshint', 'csslint', 'watch']);
   grunt.registerTask('default', ['sass', 'watch']);
-  grunt.registerTask('ugly', ['uglify']);
+  grunt.registerTask('loaf', ['uglify', 'cssmin', 'imagemin']);
 
 };
