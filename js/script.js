@@ -1,7 +1,7 @@
 console.log('working');
 
 function disablePicker(search){
-  console.log(search.value);
+  // console.log(search.value);
   if (search.value == 0) {
     $('#countries, #categories').show();
     $('#countriesOff, #categoriesOff').hide();
@@ -12,7 +12,7 @@ function disablePicker(search){
 }
 
 function disableSearch(picker){
-  console.log(picker.value);
+  // console.log(picker.value);
   if (picker.value == 0) {
     $('#search').show();
     $('#searchOff').hide();
@@ -25,9 +25,9 @@ function disableSearch(picker){
 $(document).ready(function(){
 
   var myKey = JSON.parse(apiKey);
-  console.log(myKey[0]);
+  // console.log(myKey[0]);
   myKey = myKey[0].key;
-  console.log(myKey);
+  // console.log(myKey);
 
   var cnt,cat,and,sea;
 
@@ -62,10 +62,10 @@ $(document).ready(function(){
     } else {
       sea = 'q=' + document.getElementById('search').value;
     }
-    console.log(cnt);
-    console.log(cat);
-    console.log(and);
-    console.log(sea);
+    // console.log(cnt);
+    // console.log(cat);
+    // console.log(and);
+    // console.log(sea);
     $.ajax({
       url:'http://newsapi.org/v2/top-headlines?'+cnt+''+and+''+cat+''+sea+'&apiKey=6f9585ad9b044a95bd8060af0cce9781',
       type:'GET',
@@ -79,7 +79,7 @@ $(document).ready(function(){
 				$('.mySpinner').hide();
 			},
       success: function(data){
-        console.log(data);
+        // console.log(data);
         for (var i = 0; i < data.articles.length; i++) {
 
           var author;
